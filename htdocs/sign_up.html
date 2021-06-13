@@ -1,0 +1,82 @@
+<form action='/control/sign_up_db.php' method='post' enctype='multipart/form-data'>
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    
+    <label for="User type"><b>Select user type</b></label>
+    <select name = "customer_type" id = "customer_type" onchange="select_type()">
+     <option value="" selected disabled hidden></option>
+     <option value="home">home</option>
+     <option value="business">business</option>
+    </select><br><br>
+
+    <label for="name"><b>User Name</b></label>
+    <input type="text" placeholder="Enter your name" name ="name" id="name" required disabled><br><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" name="password"  id="password" required disabled><br><br>
+    
+    <label for="marriage"><b>Marriage</b></label>
+    <input type="marriage" placeholder="Enter Marriage status" name="marriage"  id="marriage" required disabled><br><br>
+   
+    <label for="gender"><b>Gender</b></label>
+    <input type="gender" placeholder="Enter gender" name="gender" id="gender" required disabled><br><br>
+
+    <label for="age"><b>Age</b></label>
+    <input type="age" placeholder="Enter age" name="age" id="age" required disabled ><br><br>
+
+    <label for="income"><b>Income</b></label>
+    <input type="income" placeholder="Enter income" name="income" id="income" required disabled ><br><br>
+
+    <label for="address"><b>Address</b></label>
+    <input type="address" placeholder="Enter address" name="address" id="address" required disabled ><br><br>
+
+    <label for="category"><b>Category</b></label>
+    <input type="category" placeholder="Enter category" name="category" id="category" required disabled ><br><br>
+    
+   <input class='register_button' type='submit' name='register_button'  value='Register'>
+  </div>
+</form>
+
+   <script>
+
+      function select_type()
+      {
+          if(document.getElementById("customer_type").value == "home")
+          {
+              document.getElementById("gender").disabled = false;
+              document.getElementById("marriage").disabled = false;
+              document.getElementById("password").disabled = false;
+              document.getElementById("name").disabled = false;
+              document.getElementById("income").disabled = false;
+              document.getElementById("address").disabled = false;
+              document.getElementById("category").disabled = true;
+              document.getElementById("age").disabled = false;
+
+            }
+          if(document.getElementById("customer_type").value == "business")
+          {
+              document.getElementById("password").disabled = false;
+              document.getElementById("name").disabled = false;
+              document.getElementById("income").disabled = false;
+              document.getElementById("category").disabled = false;
+              document.getElementById("gender").disabled = true;
+              document.getElementById("marriage").disabled = true;
+              document.getElementById("age").disabled = true;
+
+          }
+     }
+    
+
+   </script>
+
+
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
